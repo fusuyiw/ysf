@@ -1,7 +1,8 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 @source "../../index.html";
 @source "../js/main.js";
+@source "../../projects/**/*.html";
 
 :root {
   color-scheme: dark;
@@ -252,6 +253,17 @@
     color: var(--accent);
   }
 
+  .project-link {
+    @apply mt-4 inline-flex w-full items-center justify-center border px-4 py-3 font-extrabold transition-colors duration-200;
+    border-color: rgba(56, 213, 255, 0.32);
+    color: var(--accent);
+  }
+
+  .project-link:hover,
+  .project-link:focus-visible {
+    background: rgba(56, 213, 255, 0.08);
+  }
+
   .tag-list {
     @apply m-0 flex list-none flex-wrap gap-2 p-0;
   }
@@ -260,6 +272,63 @@
     @apply border bg-white/[0.02] px-2.5 py-1.5 text-[0.82rem];
     border-color: var(--line);
     color: var(--muted);
+  }
+
+  .detail-page {
+    @apply py-10 md:py-16;
+  }
+
+  .back-link {
+    @apply mb-8 inline-flex text-sm font-bold transition-colors duration-200;
+    color: var(--muted);
+  }
+
+  .back-link:hover,
+  .back-link:focus-visible {
+    color: var(--accent);
+  }
+
+  .detail-hero {
+    @apply border-b pb-10 md:pb-14;
+    border-color: var(--line);
+  }
+
+  .detail-grid {
+    @apply grid grid-cols-1 gap-4 py-10 lg:grid-cols-[1.2fr_0.8fr];
+  }
+
+  .detail-panel {
+    @apply border p-5 md:p-7;
+    border-color: var(--line);
+    background: rgba(8, 13, 20, 0.86);
+  }
+
+  .detail-panel p,
+  .detail-list,
+  .detail-meta dd {
+    color: var(--muted);
+  }
+
+  .detail-meta {
+    @apply m-0 grid gap-4;
+  }
+
+  .detail-meta div {
+    @apply border-b pb-3 last:border-b-0 last:pb-0;
+    border-color: var(--line);
+  }
+
+  .detail-meta dt {
+    @apply mb-1 text-xs font-extrabold uppercase tracking-[0.12em];
+    color: var(--accent);
+  }
+
+  .detail-meta dd {
+    @apply m-0;
+  }
+
+  .detail-list {
+    @apply m-0 grid gap-3 pl-5;
   }
 
   .contact-panel {

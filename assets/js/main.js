@@ -1,12 +1,13 @@
-// Edit array ini untuk mengubah kartu proyek di homepage.
-// Untuk menambah proyek: copy satu object, ubah teksnya, lalu masukkan ke array.
-// Agar versi awal tetap elegan, tampilkan 3 proyek terkuat saja.
+﻿// Edit array ini untuk mengubah kartu proyek di homepage.
+// Untuk menambah proyek: copy satu object, ubah teksnya, buat file detail di folder projects,
+// lalu isi detailUrl dengan path file detail tersebut.
 const featuredProjects = [
   {
     title: "UAV Mapping untuk Perencanaan Infrastruktur",
     year: "2025",
     location: "East Kalimantan, Indonesia",
     type: "UAV Mapping",
+    detailUrl: "projects/uav-mapping-infrastruktur.html",
     summary:
       "Workflow pemetaan udara untuk perencanaan area, interpretasi terrain, dan dokumentasi engineering.",
     deliverables: ["Orthomosaic", "DTM/DSM", "Garis kontur", "Dokumentasi area"],
@@ -17,6 +18,7 @@ const featuredProjects = [
     year: "2024",
     location: "Indonesia",
     type: "Survey Topografi",
+    detailUrl: "projects/survey-topografi-area-pengembangan.html",
     summary:
       "Survey lapangan dan persiapan data elevasi untuk kebutuhan desain serta perencanaan konstruksi.",
     deliverables: ["Titik kontrol", "Spot height", "Peta kontur", "Gambar CAD-ready"],
@@ -27,6 +29,7 @@ const featuredProjects = [
     year: "2024",
     location: "Remote / Office-based",
     type: "Pengolahan Spasial",
+    detailUrl: "projects/pengolahan-data-spasial.html",
     summary:
       "Pengolahan data geospasial, produksi peta, dan visualisasi spasial untuk kebutuhan laporan teknis.",
     deliverables: ["Peta tematik", "Layer spasial terolah", "Layout peta", "Figur laporan"],
@@ -67,7 +70,7 @@ function renderProjects() {
               aria-controls="project-detail-${index}"
               data-project-toggle
             >
-              Lihat detail
+              Lihat ringkasan
             </button>
             <div class="project-detail" id="project-detail-${index}" data-project-detail hidden>
               <h4>Lokasi</h4>
@@ -76,6 +79,7 @@ function renderProjects() {
               <ul class="tag-list">${createTags(project.deliverables)}</ul>
               <h4>Tools</h4>
               <ul class="tag-list">${createTags(project.tools)}</ul>
+              <a class="project-link" href="${project.detailUrl}">Buka halaman detail</a>
             </div>
           </div>
         </article>
@@ -85,7 +89,7 @@ function renderProjects() {
 }
 
 // Fungsi ini menjaga kartu proyek tetap ringkas saat pertama dibuka.
-// Saat pengunjung klik "Lihat detail", script membuka panel detail pada kartu tersebut.
+// Saat pengunjung klik "Lihat ringkasan", script membuka panel ringkasan pada kartu tersebut.
 function initProjectToggles() {
   document.querySelectorAll("[data-project-card]").forEach((card) => {
     const button = card.querySelector("[data-project-toggle]");
@@ -98,7 +102,7 @@ function initProjectToggles() {
       const nextExpanded = !isExpanded;
 
       button.setAttribute("aria-expanded", String(nextExpanded));
-      button.textContent = nextExpanded ? "Tutup detail" : "Lihat detail";
+      button.textContent = nextExpanded ? "Tutup ringkasan" : "Lihat ringkasan";
       detail.hidden = !nextExpanded;
     });
   });
