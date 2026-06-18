@@ -79,11 +79,10 @@ const featuredProjects = [
     location: "Samarinda, Kaltim",
     type: "| Web Developer",
     imageUrl: "assets/images/9.webp",
-    imageAlt:
-      "Sistem informasi geografis berbasis web untuk inventarisasi dan pemantauan Hak Pengelolaan Lahan (HPL) di Kalimantan Timur, termasuk fitur CRUD data, dan monitoring dashboard interaktif untuk mengetahui status dan perubahan HPL secara real-time.",
+    imageAlt: "",
     websiteUrl: "https://pemanfaatanhplkaltim.com/",
     summary:
-      "Pembuatan data spasial dan delineasi bangunan pada wilayah Nusantara seluas 120.000 Ha bersama tim.",
+      "Sistem informasi geografis berbasis web untuk inventarisasi dan pemantauan Hak Pengelolaan Lahan (HPL) di Kalimantan Timur, termasuk fitur CRUD data, dan monitoring dashboard interaktif untuk mengetahui status dan perubahan HPL secara real-time.",
     deliverables: [
       "WebGIS",
       "Sistem Informasi Geografis",
