@@ -16,9 +16,7 @@ Website ini tidak membutuhkan proses build maupun dependency lokal.
 
 Buka `index.html` langsung di browser atau jalankan melalui web server lokal. Jika menggunakan Laragon, simpan proyek di folder `www`, jalankan Laragon, lalu buka:
 
-```text
-http://localhost/ysf/
-```
+[Visit My Portfolio](https://fusuyiw.github.io/webporto/)
 
 ## Mengubah data proyek
 
@@ -49,18 +47,9 @@ Gunakan gambar WebP dengan rasio sekitar 16:9, resolusi kurang lebih 640 × 360 
 │   └── js/main.js
 ├── index.html
 └── README.md
-```
 
-## Deploy ke GitHub Pages
-
-1. Push branch `main` ke repository GitHub.
-2. Buka **Settings → Pages** pada repository.
-3. Pada **Build and deployment**, pilih **Deploy from a branch**.
-4. Pilih branch `main` dan folder `/ (root)`.
-5. Simpan dan tunggu proses deployment selesai.
-
-Semua path aset menggunakan path relatif agar website tetap berfungsi saat dipublikasikan melalui GitHub Pages.
 
 ## Lisensi dan konten
 
 Kode dapat digunakan sebagai referensi. Foto, identitas, dan materi proyek merupakan milik pemilik portfolio dan tidak untuk digunakan ulang tanpa izin.
+```
